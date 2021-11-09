@@ -12,7 +12,8 @@ public class Hashset {
         emp.add(emp1);
         emp.add(emp2);
         emp.add(emp3);
-
+        
+        System.out.println("Details of Employees: ");
         for(Employee a:emp){
             a.displayDetails();
         }
@@ -32,6 +33,6 @@ class Employee{
         this.department=department;
     }
     public void displayDetails(){
-        System.out.println("Details of Employees: id :"+id+" Name :"+name+" salary :"+salary+" Dept :"+department);
+        System.out.println("id :"+id+", Name :"+name+", salary :"+salary+", Dept :"+department);
     }
 }
