@@ -111,7 +111,6 @@ class Employee {
         this.salary=salary;
     }
 
-    // default constructor is required, since we have to pass the instance of Comparator in the constructor, while creating a TreeSet
     public Employee() {}
 
     public String getName() { return name; }
@@ -119,26 +118,6 @@ class Employee {
     public float getSal() { return salary; }
     public int getId() { return id; }
 
-
-//    @Override
-//    public int compare(Employee emp1, Employee emp2)
-//    {
-//        if (emp1.getId() == emp2.getId()) {
-//            return 0;
-//        }
-//        else if (emp1.getId() < emp2.getId()) {
-//            return -1;
-//        }
-//        else {
-//            return 1;
-//        }
-//    }
-
-
-    @Override public String toString()
-    {
-        return name + " (" + id + ")";
-    }
 }
 
 class myNameComparator implements Comparator<Employee> {
