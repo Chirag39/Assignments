@@ -12,7 +12,7 @@ public class StudentsFile {
         try {
             String data=Files.readString(Path.of(path));
 
-            List<String> s=data.lines().collect(Collectors.toList());
+            List<String> s=data.lines().map(t->t.trim()).collect(Collectors.toList());
             s.stream().filter(t-> !t.isBlank()).forEach(t-> System.out.print(t+" "));
 
             System.out.println();
