@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class PriceQ5 {
     public static void main(String[] args) {
         Scanner ip=new Scanner(System.in);
-        int total=0, option=0, price, count=1;
+        int total=0, option, price, count=1;
 
         var path="C:\\Users\\chira\\Desktop\\update assignment\\Java11Assignment\\Price.txt";
         var path1="C:\\Users\\chira\\Desktop\\update assignment\\Java11Assignment\\Total.txt";
