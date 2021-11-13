@@ -5,10 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 
-@FunctionalInterface
-interface Total {
-    int addPrice(int a, int b);
-}
+
 public class PriceQ5 {
     public static void main(String[] args) {
         Scanner ip=new Scanner(System.in);
@@ -16,19 +13,18 @@ public class PriceQ5 {
 
         var path="C:\\Users\\chira\\Desktop\\update assignment\\Java11Assignment\\Price.txt";
         var path1="C:\\Users\\chira\\Desktop\\update assignment\\Java11Assignment\\Total.txt";
-        String resp;
-        Total sum=(t,n)->t+n;
+        String resp="yes";
 
         do {
             System.out.println("Select your option \n 1: Insert New Price, 2: View Purchase, 3: Exit");
             option=ip.nextInt();
 
             if(option==1){
-                do {
+                while(resp.equalsIgnoreCase("yes")){
                     System.out.println("Insert price " + count);
                     count++;
                     price = ip.nextInt();
-                    total = sum.addPrice(total, price);
+                    total+=price;
                     try {
                         Files.writeString(Path.of(path),price+ "\n", StandardOpenOption.APPEND);
                     } catch (IOException e) {}
@@ -36,7 +32,9 @@ public class PriceQ5 {
                     ip.nextLine();
                     System.out.println("Do you want to enter more items? (Yes/No)");
                     resp=ip.nextLine();
-                }while(!resp.equalsIgnoreCase("NO"));
+                    if(resp.equalsIgnoreCase("no"))
+                        break;
+                }
 
             }
             if(option==2) {
